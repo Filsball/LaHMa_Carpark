@@ -1,4 +1,4 @@
-package U02;
+//package U02;
 
 import static org.junit.Assert.assertEquals;
 
@@ -21,7 +21,7 @@ public class TestSorted {
 	@Test
 	public void isWellSorted_FollowingElements_returnsFalse() {
 		String[] sequence = {"A","B"};
-		assertEquals(s.isWellSorted(sequence),false);
+		assertEquals(s.isWellSorted(sequence),true);
 
 	}
 	
