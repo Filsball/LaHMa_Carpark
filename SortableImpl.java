@@ -35,6 +35,10 @@ public class SortableImpl implements Sortable {
 	public boolean isWellSorted(String[] sequence) {
 		Set<String> validTasks = possibleTasks();
 		for(int i = 0; i<sequence.length; i++) {
+			if(! allTasks.contains(sequence[i])) {
+				throw new java.util.NoSuchElementException();
+			}
+			
 			String temp = sequence[i];
 			if(! validTasks.contains(temp)) {
 				return false;
