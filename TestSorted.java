@@ -7,6 +7,7 @@ import java.util.NoSuchElementException;
 import org.junit.Before;
 import org.junit.Test;
 
+
 public class TestSorted {
 
 	
@@ -14,14 +15,14 @@ public class TestSorted {
 	
 	@Before
 	public void set(){
-		s = new SortableImpl(new String[][] {{"A","C"},{"B","D"},{"C","E"},{"D","F"}});
-		
+		s = new SortableImpl(new String[][] {{"A","C"},{"B","D"},{"C","E"},{"D","F"}});		
 	}
 	
 	@Test
 	public void isWellSorted_FollowingElements_returnsFalse() {
 		String[] sequence = {"A","B"};
 		assertEquals(s.isWellSorted(sequence),false);
+
 	}
 	
     @Test(expected = NoSuchElementException.class)
