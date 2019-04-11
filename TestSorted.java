@@ -28,12 +28,15 @@ public class TestSorted {
 	}
 	
     @Test(expected = NoSuchElementException.class)
-	public void Testtest() {
+	public void isWellSorted_NoSuchElement_ExceptionThrow() {
 		String[]sequence = {"A","G"};
 		s.isWellSorted(sequence);
-		
-		
-		
 	}
+    
+    @Test(expected = NullPointerException.class)
+    public void isWellSorted_Null_NullPointer() {
+    	String[] sequence = {"A",null};
+    	s.isWellSorted(sequence);
+    }
 
 }
