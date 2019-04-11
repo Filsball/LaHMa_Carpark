@@ -1,17 +1,22 @@
-package U02;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-class TestSorted {
+//import static org.junit.Assert.assertEquals;
+//import org.junit.Before;
+//import org.junit.Test;
+
+
+
+public class TestSorted {
 
 	
 	Sortable s;
 	
 	@Before
-	public void set(){
+	public void setUp(){
+		System.out.println("Hi");
 		s = new SortableImpl(new String[][] { {"A","C"},{"B","D"},{"C","E"},{"D","F"}});
 		
 	}
@@ -20,6 +25,7 @@ class TestSorted {
 	public void isWellSorted_firstElement_returnsTrue(){
 		
 		String[] sequence = {"A"};
+		System.out.println(s);
 		assertEquals(s.isWellSorted(sequence),true);
 	}
 	
