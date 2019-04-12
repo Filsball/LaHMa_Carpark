@@ -1,5 +1,3 @@
-//package U02;
-
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -37,6 +35,9 @@ public class SortableImpl implements Sortable {
 	public boolean isWellSorted(String[] sequence) {
 		Set<String> validTasks = possibleTasks();
 		for(int i = 0; i<sequence.length; i++) {
+			if(sequence[i] == null) {
+				throw new NullPointerException();
+			}
 			if(! allTasks.contains(sequence[i])) {
 				throw new java.util.NoSuchElementException();
 			}
