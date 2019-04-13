@@ -1,4 +1,4 @@
-//package U02;
+
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,6 +15,7 @@ public class TestSorted {
 	@Before
 	public void set(){
 		s = new SortableImpl(new String[][] {{"A","C"},{"B","D"},{"C","E"},{"D","F"}});
+		  
 		
 	}
 	
@@ -39,11 +40,42 @@ public class TestSorted {
     	s.isWellSorted(sequence);
     }
     
+    @Test(expected = NullPointerException.class)
+    public void isWellSorted_Null2_NullPointer() {
+    	String[] sequence = {null,"A"};
+    	s.isWellSorted(sequence);
+    }
+    
     @Test
-    public void isWellSorted_twice_returnsfalse()
+    public void isWellSorted_elementTwice_returnsfalse()
     {
     	String[] sequence = {"A","C","B","D","C"};
     	assertEquals(s.isWellSorted(sequence), false);
     }
-
+    
+    @Test(expected = NullPointerException.class)
+    public void isWellSorted_NullConstructor(){
+    	Sortable p = new SortableImpl(null);
+    	
+    }
+    
+    @Test
+    public void isWellSorted_valideTasks_returnstrue()
+    {
+    	String[] sequence = {"A","C","B","D","E","F"};
+    	assertEquals(s.isWellSorted(sequence), true);
+    }
+    
+    @Test
+    public void isWellSorted_sameElement_returnsfalse()
+    {
+    	String[] sequence = {"A","A"};
+    	assertEquals(s.isWellSorted(sequence), false);
+    }
+    
+    
+    
+    
+    
+    
 }
