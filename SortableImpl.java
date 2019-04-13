@@ -1,4 +1,3 @@
-//package U02;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -22,7 +21,11 @@ public class SortableImpl implements Sortable {
 	}
 	
 	public Set<String> possibleTasks(){
-		Set<String> possible = allTasks;
+		Iterator<String> getTasks = allTasks.iterator();
+		Set<String> possible = new HashSet<String>();
+		while(getTasks.hasNext()) {
+			possible.add(getTasks.next());
+		}
 		Iterator<String[]> iter = tasks.iterator();
 		while(iter.hasNext()) {
 			String[] temp = iter.next();
@@ -47,6 +50,7 @@ public class SortableImpl implements Sortable {
 			if(! validTasks.contains(temp)) {
 				return false;
 			}
+			validTasks.remove(temp);
 			Iterator<String[]> iter = tasks.iterator();
 			while(iter.hasNext()) {
 				String[] temp2 = iter.next();
