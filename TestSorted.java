@@ -38,5 +38,12 @@ public class TestSorted {
     	String[] sequence = {"A",null};
     	s.isWellSorted(sequence);
     }
+    
+    @Test
+    public void isWellSorted_twice_returnsfalse()
+    {
+    	String[] sequence = {"A","C","B","D","C"};
+    	assertEquals(s.isWellSorted(sequence), false);
+    }
 
 }
