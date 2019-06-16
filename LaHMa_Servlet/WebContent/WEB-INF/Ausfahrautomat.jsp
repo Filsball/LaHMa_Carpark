@@ -5,13 +5,19 @@
 <head>
 <script type="text/javascript">function aufruf(input){document.getElementById('method').value=input.value; document.getElementById('startFormular').submit();}</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+<link href="/LaHMa_Servlet/CSS/fancyButton.css" rel="stylesheet" type="text/css">
 <title>Ausfahrautomat</title>
 </head>
 <body>
-<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
-<input type="hidden" value="" name="method" id="method">
-<input type="button" value="Lese Ticket" onclick="aufruf(this);">
-<input type="button" value="Scanne Abo" onclick="aufruf(this);">
-</form>
+<div class="header">
+  <h1 contenteditable spellcheck="false">LaHMa Park</h1>
+  <div class="parent">
+  <div class="container">
+  <div class="neon">noch frei: </div>
+  <div class="neon">27 </div>
+  </div>
+</div>
+</div>
 </body>
 </html>

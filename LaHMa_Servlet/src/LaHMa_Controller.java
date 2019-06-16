@@ -25,7 +25,7 @@ public class LaHMa_Controller extends HttpServlet {
 		System.out.println(ergebnis);
 		if(ergebnis == null) {request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response);return;}
 		switch(ergebnis) {
-			case "einfahren" : System.out.println("hi"); break;
+			case "Ticketautomat" : System.out.println("hi"); break;
 			
 			default : request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response); 
 		}
