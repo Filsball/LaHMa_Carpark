@@ -1,115 +1,23 @@
-@import url(https://fonts.googleapis.com/css?family=Dosis);
+
 * {
   box-sizing: border-box;
 }
 
-.button {
-  font-size: 5vw;
-  border: none;
-  background-color: #ebebf0;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  position: relative;
-  z-index: 1;
-  padding: 0;
-}
-@media (min-width: 40em) {
-  .button {
-    font-size: 2em;
-  }
-}
-.button:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 10px;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: rgba(0, 10, 50, 0.2);
-  transition: -webkit-transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
-  transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
-  transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9), -webkit-transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
-  -webkit-transform: translate3D(0, 0, 0);
-          transform: translate3D(0, 0, 0);
-}
-.button:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #ebebf0;
-  z-index: -1;
-}
-.button:hover:before, .button:focus:before {
-  -webkit-transform: translate3D(10px, 0, 0);
-          transform: translate3D(10px, 0, 0);
-}
-.button:active:before {
-  -webkit-transform: translate3D(0, 0, 0);
-          transform: translate3D(0, 0, 0);
-}
-.button:focus, .button:active {
-  outline: none;
-}
-.button .button__inner {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #333;
-  padding: 1em 1.5em;
-  background-color: #fbfbfb;
-  display: block;
-  width: 100%;
-  height: 100%;
-  transition: -webkit-transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
-  transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
-  transition: transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9), -webkit-transform 0.6s cubic-bezier(0, 0.9, 0.13, 0.9);
-  position: relative;
-}
-.button:hover .button__inner, .button:focus .button__inner {
-  -webkit-transform: translate3D(0, -10px, 0);
-          transform: translate3D(0, -10px, 0);
-}
-.button:active .button__inner {
-  -webkit-transform: translate3D(0, 0, 0);
-          transform: translate3D(0, 0, 0);
-}
-.button:hover .button__inner, .button:focus .button__inner {
-  background-color: #fff;
+body {
+
+  font-family: Arial;
+  padding: 10px;
+   background-color: #100e17;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
 }
 
-.button--secondary {
-  background-color: #00d18e;
-  z-index: 0;
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background-image: linear-gradient(to bottom, hsl(0, 100%, 30%), black);
 }
-.button--secondary:after {
-  background-color: #00d18e;
-}
-.button--secondary .button__inner {
-  background-color: #00ffb2;
-}
-.button--secondary:hover .button__inner, .button--secondary:focus .button__inner {
-  background-color: #11ffb3;
-}
-
-html, body {
-  background-color: #fbfbfb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  font-family: 'Dosis', cursive;
-}
-
-
-@import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 
 :root {
   /* Base font size */
@@ -118,25 +26,21 @@ html, body {
   /* Set neon color */
   --neon-text-color: #f40;
   --neon-border-color: #08f;
+  --neon-background-color: hsl(0, 100%, 30%);
 }
 
-body {
-  font-family: 'Exo 2', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-  background: #000;
-  min-height: 100vh;
-}
+
 
 h1 {
-  font-size: 13rem;
+  
+  font-size: 4rem;
   font-weight: 200;
   font-style: italic;
   color: #fff;
-  padding: 4rem 6rem 5.5rem;
+  padding: 2rem; /* (o,r,u,l) oder (o, rl, u) oder (ou, rl) oder (ourl) */
   border: 0.4rem solid #fff;
   border-radius: 2rem;
+  display: inline-block;
   
   animation: flicker 1.5s infinite alternate;     
 }
@@ -182,4 +86,96 @@ h1:focus {
         text-shadow: none;
         box-shadow: none;
     }    
+}
+
+:root {
+    font-size: 10px;
+}
+
+nav{
+display: inline-block;
+}
+nav ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+color: white;
+    width: 30rem;
+    height: 5rem;
+    font-size: 18px;
+    text-align: center;
+    line-height: 5rem;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: 0.3s;
+    margin: 3rem;
+   
+}
+
+nav li::before,
+nav li::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+nav li::before {
+  border-radius: 5px;
+    background-color: hsl(0, 100%, 89%);
+    z-index: -1;
+    box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var( --neon-background-color),
+            inset 0 0 2rem var( --neon-background-color),
+            0 0 4rem var( --neon-background-color),
+            inset 0 0 4rem var( --neon-background-color);
+}
+
+nav li::after {
+  border-radius: 5px;
+    background-color: white;
+    transform: translate(1.5rem, 1.5rem);
+    z-index: -2;
+    box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var( --neon-border-color),
+            inset 0 0 2rem var( --neon-border-color),
+            0 0 4rem var( --neon-border-color),
+            inset 0 0 4rem var( --neon-border-color); 
+}
+
+nav li:hover {
+  border-radius: 5px;
+    transform: translate(1.5rem, 1.5rem);
+    color: white;
+    
+}
+
+nav li:hover::before {
+  border-radius: 5px;
+    background-color: hsl(0, 100%, 89%);
+    box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var( --neon-border-color),
+            inset 0 0 2rem var( --neon-border-color),
+            0 0 4rem var( --neon-border-color),
+            inset 0 0 4rem var( --neon-border-color); 
+}
+
+nav li:hover::after {
+  border-radius: 5px;
+    background-color: white;
+    transform: translate(-1.5rem, -1.5rem);
+    
 }
