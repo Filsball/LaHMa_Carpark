@@ -20,7 +20,15 @@ public class LaHMa_Controller extends HttpServlet {
 	public void doGet(	HttpServletRequest request, 
 			HttpServletResponse response) throws IOException, ServletException{
 		
-		
+		System.out.println("getbekommen");
+		String ergebnis = request.getParameter("method");
+		System.out.println(ergebnis);
+		if(ergebnis == null) {request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response);return;}
+		switch(ergebnis) {
+			case "einfahren" : System.out.println("hi"); break;
+			
+			default : request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response); 
+		}
 		
 		request.setAttribute("result", "This is the result of the servlet call");
 		request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response);
