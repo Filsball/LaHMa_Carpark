@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.SynchronousQueue;
 
 
@@ -13,6 +14,7 @@ import java.util.concurrent.SynchronousQueue;
 
 public class Verification {
 
+	//Ausfahrt NormalKunde
 	public static void checkTicket(Ticket t) {
 
 		if(t.getEnt()!=null) {
@@ -27,7 +29,8 @@ public class Verification {
 			System.out.println("Ticket bitte entwerten lassen");
 		}
 	}
-
+	
+	//Berechnet ob das Zeitintervall zwischen Entwertung und Ausfahrt überschritten ist
 	public static boolean calcIfEntwertet( Date ticket) {
 
 		Date aktuell = new Date();
@@ -36,9 +39,21 @@ public class Verification {
 		return (aktuellL-ticket.getTime())<1_200_000.0;
 	}
 
-	public boolean checkAboId(int id) {
-
+	
+	//An Ein- und Ausfahrt, checkt ob ID einem Abo zugehörig ist.
+	public static boolean checkAboId(int i) {
+		
+		System.out.println("Abo-Ticket scannen");
+		
+		for(Abo j: AboDBS.getAktuelleAbos()) {
+			if(j.getId()==i) {
+				System.out.println("Abo-Ticket gültig.");
+				return true;
+			}
+		}
+		System.out.println("Ticket ungültig");
 		return false;
+		
 	}
 	
 	public int getAboByIdentity(){

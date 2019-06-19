@@ -6,7 +6,9 @@ public class LoeseTicket {
 
 	public static Ticket getTicket() {
 		
-		if(FreeSpots.checkIfFree()) {
+		//Sind Freie Plätze verfügbar?
+		if(FreeSpots.checkIfFree()) {	
+			//JA
 			Ticket t = TicketDBS.newTicket();
 			System.out.println("Das Ticket mit der ID: " + t.getId() + " wurde gedruckt");
 			
@@ -14,6 +16,7 @@ public class LoeseTicket {
 			return t;
 			
 		}else {
+			//NEIN
 			System.out.println("Derzeit sind keine Parkplätze verfügbar");
 			return null;
 		}

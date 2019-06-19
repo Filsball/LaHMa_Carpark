@@ -1,7 +1,7 @@
 
 public class Payment {
 
-	public void callPayment() {
+	public static void callPayment() {
 
 	}
 

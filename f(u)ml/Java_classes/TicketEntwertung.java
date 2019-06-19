@@ -15,22 +15,23 @@ import java.util.Date;
  *  */
 
 public class TicketEntwertung {
-
+	
+	//Bezahlvorgang wird aufgerufen
 	public static void payTicket(int preis) {
-
+		
+		//Payment.callPayment()
 		System.out.println("Der Preis des Tickets beträgt: " + preis + " Cents");
 
 	}
-
+	
 	public static void entwerteTicket(Ticket t) {
-
-		TicketDBS.setEndZeit(t);
-		Date[] d = { t.getStart(), t.getEnt() };
-		int preis = calcTicketPrice(d);
-		payTicket(preis);
-		t.setPreis(preis);
-		TicketDBS.ticketIstAusgefahren(t);
-
+		
+		Date[] d = { t.getStart(), t.getEnt() }; //Start und entwerttungs/Aktuelle Zeit
+		int preis = calcTicketPrice(d);			 //Preisberechnung
+		payTicket(preis);						 //Payment aufruf
+		TicketDBS.setEndZeit(t);				 //Entwertungszeit wird gesetzt (Nach Zahlung)
+		t.setPreis(preis);						 //Preis wird gesetzt
+		
 	}
 
 	// Brauch ich das?
@@ -39,7 +40,8 @@ public class TicketEntwertung {
 		return null;
 
 	}
-
+	
+	//Berechnet Ticketpreis (Zeitintervall in Stunden * Stundensatz)
 	public static int calcTicketPrice(Date[] d) { // [start, entwerttime]
 
 		double interval = d[1].getTime() - d[0].getTime();

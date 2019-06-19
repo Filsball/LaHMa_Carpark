@@ -9,18 +9,41 @@ public class AboDBS {
 	
 	private static List<Abo> canceledAbos = new ArrayList<Abo>();
 	
-	
+	public static Abo newAbo(String username, String password) {
+		Abo a = new Abo(username, password);
+		abos.add(a);
+		return a;
+	}
 	
 
 	public boolean hasAbo(int AboId) {
 		return false;
 	}
 	
-	public int getId(String username, String password) {
-		return 0;
+	public static Abo getAbo(String username, String password) {
+		
+		Abo lost = null;
+		for(Abo a : abos) {
+			if (a.getName().equals(username)){
+				if(a.getPassword().equals(password)) {
+					lost = a;
+					break;
+				}else {
+					System.out.println("Passwort falsch");
+					return null;
+				}
+			}else {
+				System.out.println("Username falsch");
+				return null;
+			}
+		}
+		
+		return lost;
 	}
 	
-	public void setAboCanceled(int AboId) {
+	public static void setAboCanceled(Abo a) {
+		canceledAbos.add(a);
+		abos.remove(a);
 		
 	}
 	
@@ -35,5 +58,9 @@ public class AboDBS {
 	
 	public void newEntry(Abo abo) {
 		abos.add(abo);
+	}
+	
+	public static List<Abo> getAktuelleAbos(){
+		return abos;
 	}
 }

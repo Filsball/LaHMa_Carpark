@@ -19,39 +19,58 @@ public class TicketDBS {
 	
 	private static List<Ticket> abgeschlosseneTickets = new ArrayList<Ticket>();
 	
+	
+	//Gibt die aktuell freien Plätze zurück
 	public static int getTicketZahl() {
 		return p.getSpots();
 	}
 	
+	//Neues Ticket wird erstellt
 	public static Ticket newTicket() {
-		Ticket t = new Ticket();
-		p.platzBelegen();
-		aktiveTickets.add(t);
+		Ticket t = new Ticket();	
+		p.platzBelegen();		//Freie Plätze--
+		aktiveTickets.add(t);	//Ticket der Liste hinzufügen
 		return t;
 	}
 	
-	//Brauch ich das??!!
+	//Brauch ich das??!! JA!
 	public static void setEndZeit(Ticket t) {
 		
 		t.setEntZeit(new Date());	
 	}
 	
+	//Wird aufgerufen bei Verification wenn Ticket korrekt entwertet ist
 	public static void ticketIstAusgefahren(Ticket t) {
 		
-		abgeschlosseneTickets.add(t);
-		aktiveTickets.remove(t);
-		p.platzFreigeben();
+		abgeschlosseneTickets.add(t);	//Ticket wird den Abgeschlossenen hinzugegfügt
+		aktiveTickets.remove(t);		//Ticket wird aus aktiver Liste entfernt
+		p.platzFreigeben();				//freie Plätze++
 	}
 	
+	//gibt den Stundensatz zurück
 	public static int getPricePerHour() {
 		return p.getPrice();
 	}
 	
+	//Gibt Liste Aktiver Tickets zurück
 	public static List getAktList() {
 		return aktiveTickets;
 	}
 	
+	//Gibt Liste abgeschlossener Tickets zurück
 	public static List getAbList() {
 		return abgeschlosseneTickets;
 	}	
+	
+	//Wird nach Bezahlung des ErsatzTicket aufgerufen
+	//Gibt ErsatzTicket zurück
+	public static Ticket lostTicket() {
+		p.platzFreigeben();			//Freie Plätze++
+		Ticket t = newTicket();		//Neues Ticket
+		setEndZeit(t);				//Entwertzeit wird direkt gesetzt, weil bezahlt
+		t.setPreis(3000);			//Instanzvariable Preis wird gesetzt (TagesSatz + Gebühr)
+		
+		return t;
+		
+	}
 }

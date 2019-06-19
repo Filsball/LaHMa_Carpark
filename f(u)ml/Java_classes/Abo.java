@@ -17,5 +17,13 @@ public class Abo {
 		return id;
 	}
 	
+	public String getName() {
+		return username;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
 
 }
