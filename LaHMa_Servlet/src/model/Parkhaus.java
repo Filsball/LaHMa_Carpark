@@ -46,6 +46,9 @@ public class Parkhaus {
 	public static int getPrice() {
 		return ticketPreis;
 	}
+	public static int getAboPrice() {
+		return aboPreis;
+	}
 
 	
 	
