@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.LaHMa_Controller;
+import controller.LoeseTicket;
 
 public class EinfahrState extends ServletState {
 
@@ -13,7 +14,10 @@ public class EinfahrState extends ServletState {
 
 	@Override
 	public void processGetRequest(HttpServletRequest request, HttpServletResponse response) {
-		
+		String req = request.getParameter("method");
+		if (req.equals("getTicket")) {
+			LoeseTicket.getTicket();			
+		}
 	}
 
 	@Override
