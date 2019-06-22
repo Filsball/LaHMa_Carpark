@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.LaHMa_DB;
 import controller.states.AboManagementState;
 import controller.states.AbozahlAnpassungState;
 import controller.states.AnsichtsAuswahlState;
@@ -20,6 +19,7 @@ import controller.states.ManagerAnsichtState;
 import controller.states.PreisAnpassungState;
 import controller.states.ServletState;
 import controller.states.TicketAutomatState;
+import model.LaHMa_DB;
 
 public class LaHMa_Controller extends HttpServlet {
 
