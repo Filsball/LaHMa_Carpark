@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class AboHandling {
@@ -25,7 +26,7 @@ public class AboHandling {
 	}
 	
 	
-	public static void aboVerloren() {
+	public static Abo aboVerloren() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Geben Sie Ihren Usernamen ein");
 		String username = sc.next();
@@ -38,7 +39,7 @@ public class AboHandling {
 			System.out.println("Ihr Ticket mit der ID: " + lost.getId() + " wurde gedruckt");
 		}
 		
-		
+		return lost;
 		
 	}
 	

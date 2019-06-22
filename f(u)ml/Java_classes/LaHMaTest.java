@@ -1,13 +1,11 @@
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
-import org.junit.jupiter.api.Test;
 
 class LaHMaTest {
 
 	
 	Parkhaus laHMa = Parkhaus.getInstance();
 	
+	@Before
 	
 	
 	@Test

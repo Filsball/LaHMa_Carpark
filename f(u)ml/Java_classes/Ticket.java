@@ -10,7 +10,7 @@ public class Ticket {
 	
 	
 	public Ticket() {
-		this.startZeit = new Date();
+		this.startZeit = new Date(System.currentTimeMillis()); 	//System.currentTimeMillis()
 		id = idCounter;
 		idCounter++;
 		preis = 0;
