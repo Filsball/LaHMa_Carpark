@@ -24,12 +24,35 @@
 		</div>
 		<nav>
 			<ul>
-				<li onclick="if(setTicketID())aufruf('checkTicket')">Entwerte Ticket</li>
+				<li onclick="aufruf('selectTicket')">Entwerte Ticket</li>
 				<li onclick="if(setTicketID())aufruf('scanAbo')">Scanne Abo-Ticket</li>
 				<li onclick="aufruf('back')">Zurück</li>
 			</ul>
 		</nav>
-
+		<%@ page import="model.Ticket" %>
+		<% 
+			Ticket ticket = (Ticket) request.getAttribute("ticket");
+			if(ticket != null){
+		%>	
+		
+				<div class="card" >
+				    <h3 class="title">Ticket <%=ticket.getId()%></h3>
+				    <div class="bar">
+				      <div class="emptybar"></div>
+				      <div class="filledbar"></div>
+				    </div>
+				    <div class="circle">
+				      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+				      <circle class="stroke" cx="60" cy="60" r="50"/>
+				    </svg>
+				    </div>
+				  </div>	
+				
+		<%		
+			}
+		
+		%>
+		
 		<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
 			<input id="method" name="method" type="hidden">
 			<input id="ticketID" name="ticketID" type="hidden">
