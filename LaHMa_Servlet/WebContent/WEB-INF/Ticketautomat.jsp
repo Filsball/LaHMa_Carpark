@@ -24,9 +24,9 @@
 		</div>
 		<nav>
 			<ul>
-				<li onclick="if(setTicketID())aufruf('checkTicket')">Ticket entwerten</li>
+				<li onclick="if(setTicketID())aufruf('checkTicket')">Führe Ticket ein</li>
 				<li onclick="if(setTicketID())aufruf('scanAbo')">Scanne Abo-Ticket</li>
-				<li onclick="aufruf('back')">Zurück</li>
+				<li onclick="aufruf('back')">Verlassen</li>
 			</ul>
 		</nav>
 

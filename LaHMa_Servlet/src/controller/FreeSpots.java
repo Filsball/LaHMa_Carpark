@@ -21,8 +21,4 @@ public class FreeSpots {
 		
 		return (int)((free-aktiveAbos)*0.95);
 	}
-	public static int getFreeSpots() {
-		int aktiveAbos = AboDBS.getMaxAbos()-AboDBS.getFreeAbos();
-		return calcSpots(TicketDBS.getTicketZahl(),aktiveAbos);
-	}
 }

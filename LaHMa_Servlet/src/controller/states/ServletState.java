@@ -37,7 +37,7 @@ public abstract class ServletState {
 				controller.setState(this);
 			}
 		}
-		request.setAttribute("freeSpots", FreeSpots.getFreeSpots());
+		request.setAttribute("freeSpots", FreeSpots.calcSpots(Parkhaus.getSpots(), Parkhaus.getMaxAbo()));
 		request.getRequestDispatcher("/WEB-INF/"+s.viewName+".jsp").forward(request, response);
 	}
 
