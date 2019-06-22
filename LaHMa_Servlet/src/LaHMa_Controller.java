@@ -20,6 +20,7 @@ public class LaHMa_Controller extends HttpServlet {
 	public void doGet(	HttpServletRequest request, 
 			HttpServletResponse response) throws IOException, ServletException{
 		
+		
 		System.out.println("getbekommen");
 		String ergebnis = request.getParameter("method");
 		System.out.println(ergebnis);

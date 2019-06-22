@@ -15,6 +15,12 @@
   <div class="neon">27 </div>
   </div>
 </div>
+<div class="parent2">
+  <div class="container">
+  <div class="neon">open: </div>
+  <div class="neon">24/7 </div>
+  </div>
+</div>
 </div>
 <nav>
   <ul>
@@ -25,7 +31,7 @@
   </ul>
 </nav>
 
-<form method="get" action="/LaHMa_Servlet/LaHMa_Controller">
+<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
 <input type="hidden">
 </form>
 </body>
