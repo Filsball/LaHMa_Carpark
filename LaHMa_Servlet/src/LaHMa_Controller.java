@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LaHMa_Controller extends HttpServlet {
 	
-	
+	private ServletState state;
 	
 	private static final long serialVersionUID = 1L;
 	private LaHMa_DB bean;
