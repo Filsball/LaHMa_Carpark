@@ -35,6 +35,7 @@
 			if(ticket != null){
 		%>	
 		
+			<div class="container2">
 				<div class="card" >
 				    <h3 class="title">Ticket <%=ticket.getId()%></h3>
 				    <div class="bar">
@@ -47,6 +48,7 @@
 				    </svg>
 				    </div>
 				  </div>	
+			  </div>	
 				
 		<%		
 			}

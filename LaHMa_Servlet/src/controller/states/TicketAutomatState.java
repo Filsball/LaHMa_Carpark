@@ -15,22 +15,24 @@ public class TicketAutomatState extends ServletState {
 
 	@Override
 	public void processGetRequest(HttpServletRequest request, HttpServletResponse response) {
-
-	}
-
-	@Override
-	public void processPostRequest(HttpServletRequest request, HttpServletResponse response) {
-		String event = request.getParameter("method").toLowerCase();
+		String event = request.getParameter("method");
+		System.out.println("Ticketautomat.process");
 		switch(event) {
-			case "entwerten" : 
+			case "selectTicket" : 
 				request.setAttribute("answereMethod", "entwerteTicket");
 			break;
 			case "entwerteTicket" : 
 				Ticket t = (Ticket) request.getAttribute("ticket");
 				TicketEntwertung.entwerteTicket(t);
+				System.out.println("Setting entwertet Ticket: ");
 				request.setAttribute("ticket", t);
 			break;
 		}
+	}
+
+	@Override
+	public void processPostRequest(HttpServletRequest request, HttpServletResponse response) {
+		
 	}
 
 

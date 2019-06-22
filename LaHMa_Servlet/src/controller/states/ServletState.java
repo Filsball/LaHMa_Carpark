@@ -28,10 +28,13 @@ public abstract class ServletState {
 
 	public void processGetRequestAndChangeState(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		processGetRequest(request,response);
+		
+		
 		String event = request.getParameter("method");
 		ServletState s = this;
 		if(event != null) {
 			s = changeState(event);
+			System.out.println("trying to swap to :"+s);
 			if(s == null) {
 				s = this;
 				controller.setState(this);

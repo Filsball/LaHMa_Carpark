@@ -262,12 +262,14 @@ display: inline-block;
 }
 		
 .container2 {
-      position: absolute;
+      position: relative;
     height: 300px;
     width: 80vw;
     left: calc(50% - 40vw);
     display: flex;
-    top: 300px;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
 }
 
 .card {

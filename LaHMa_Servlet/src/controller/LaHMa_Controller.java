@@ -49,7 +49,7 @@ public class LaHMa_Controller extends HttpServlet {
 		AnsichtsAuswahlState ansicht = new AnsichtsAuswahlState(this,"Startseite");
 		BilanzAnzeigeState bilanz = new BilanzAnzeigeState(this,"Bilanz");
 		EinfahrState einfahr = new EinfahrState(this,"Einfahrautomat");
-		SelectingTicketState selectTicket = new SelectingTicketState(this,"Entwerten");
+		SelectingTicketState selectTicket = new SelectingTicketState(this,"ShowAllTickets");
 		ManagerAnsichtState manager = new ManagerAnsichtState(this,"Manager");
 		PreisAnpassungState preis  = new PreisAnpassungState(this,"Preisanpassung");
 		
@@ -57,12 +57,6 @@ public class LaHMa_Controller extends HttpServlet {
 				new Pair("einfahren",einfahr),
 				new Pair("manager",manager),
 				new Pair("ticketAutomat",ticketAutomat)
-		));
-		
-		ticketAutomat.setStateMap( generateStateMap( 
-				new Pair("updatePrice",ticketAutomat),
-				new Pair("beglichen", ansicht),
-				new Pair("back",ansicht)
 		));
 		
 		manager.setStateMap( generateStateMap( 
@@ -94,7 +88,7 @@ public class LaHMa_Controller extends HttpServlet {
 		));
 
 		ticketAutomat.setStateMap( generateStateMap( 
-				new Pair("entwerten",selectTicket),
+				new Pair("selectTicket",selectTicket),
 				new Pair("abo",manageAbo),
 				new Pair("back",ansicht)		
 		));
@@ -106,11 +100,6 @@ public class LaHMa_Controller extends HttpServlet {
 		manageAbo.setStateMap( generateStateMap( 
 				new Pair("cancel",manageAbo),
 				new Pair("abschließen",manageAbo),
-				new Pair("back",ticketAutomat)				
-		));
-
-		selectTicket.setStateMap( generateStateMap( 
-				new Pair("updatePreis",selectTicket),
 				new Pair("back",ticketAutomat)				
 		));
 		AnsichtsAuswahlState.startSeitePointer = ansicht;

@@ -168,7 +168,7 @@
 				while(iter.hasNext()){
 					Ticket ticket = iter.next();
 			%>
-				<div class="card" onclick="setTicketID(<%=ticket.getId()%>); aufruf(${answereMethod });">
+				<div class="card" onclick="setTicketID(<%=ticket.getId()%>); aufruf('${answereMethod }');">
 				    <h3 class="title">Ticket <%=ticket.getId()%></h3>
 				    <div class="bar">
 				      <div class="emptybar"></div>
