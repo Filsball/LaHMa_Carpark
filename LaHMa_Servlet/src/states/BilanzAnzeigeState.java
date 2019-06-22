@@ -1,10 +1,14 @@
+package states;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import controller.LaHMa_Controller;
+
 public class BilanzAnzeigeState extends ServletState {
 
-	public BilanzAnzeigeState(LaHMa_Controller controller) {
-		super(controller);
+	public BilanzAnzeigeState(LaHMa_Controller controller, String viewName) {
+		super(controller, viewName);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -19,5 +23,4 @@ public class BilanzAnzeigeState extends ServletState {
 		// TODO Auto-generated method stub
 
 	}
-
 }

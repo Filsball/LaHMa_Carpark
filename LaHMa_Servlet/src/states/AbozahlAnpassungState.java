@@ -1,10 +1,15 @@
+package states;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class AbozahlAnpassungState extends ServletState {
+import controller.LaHMa_Controller;
 
-	public AbozahlAnpassungState(LaHMa_Controller controller) {
-		super(controller);
+public class AbozahlAnpassungState extends ServletState {
+	public final String view = "AbozahlAnpassung";
+
+	public AbozahlAnpassungState(LaHMa_Controller controller, String viewName) {
+		super(controller, viewName);
 		// TODO Auto-generated constructor stub
 	}
 

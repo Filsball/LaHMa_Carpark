@@ -1,10 +1,14 @@
+package states;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class EntwertungState extends ServletState {
+import controller.LaHMa_Controller;
 
-	public EntwertungState(LaHMa_Controller controller) {
-		super(controller);
+public class TicketAutomatState extends ServletState {
+
+	public TicketAutomatState(LaHMa_Controller controller, String viewName) {
+		super(controller, viewName);
 	}
 
 	@Override
@@ -16,5 +20,6 @@ public class EntwertungState extends ServletState {
 	public void processPostRequest(HttpServletRequest request, HttpServletResponse response) {
 
 	}
+
 
 }

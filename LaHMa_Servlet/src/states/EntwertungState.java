@@ -1,10 +1,14 @@
+package states;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class EinfahrState extends ServletState {
+import controller.LaHMa_Controller;
 
-	public EinfahrState(LaHMa_Controller controller) {
-		super(controller);
+public class EntwertungState extends ServletState {
+
+	public EntwertungState(LaHMa_Controller controller, String viewName) {
+		super(controller, viewName);
 	}
 
 	@Override
@@ -16,5 +20,6 @@ public class EinfahrState extends ServletState {
 	public void processPostRequest(HttpServletRequest request, HttpServletResponse response) {
 
 	}
+
 
 }

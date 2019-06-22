@@ -1,11 +1,14 @@
+package states;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import controller.LaHMa_Controller;
+
 public class ManagerAnsichtState extends ServletState {
 
-	public ManagerAnsichtState(LaHMa_Controller controller) {
-		super(controller);
-		// TODO Auto-generated constructor stub
+	public ManagerAnsichtState(LaHMa_Controller controller, String viewName) {
+		super(controller, viewName);
 	}
 
 	@Override
@@ -19,5 +22,6 @@ public class ManagerAnsichtState extends ServletState {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }
