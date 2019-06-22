@@ -34,7 +34,7 @@
 				while(iter.hasNext()){
 					Ticket ticket = iter.next();
 			%>
-				<div class="card">
+				<div class="card" onclick="setTicketID(<%=ticket.getId()%>); aufruf(${answereMethod });">
 				    <h3 class="title">Ticket <%=ticket.getId()%></h3>
 				    <div class="bar">
 				      <div class="emptybar"></div>
@@ -56,6 +56,7 @@
 
 		<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
 			<input id="method" name="method" type="hidden">
+			<input id="ticketID" name="ticketID" type="hidden">
 		</form>
 	</body>
 </html>

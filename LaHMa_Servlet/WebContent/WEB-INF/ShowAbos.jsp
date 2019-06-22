@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ticketautomat</title>
+		<title>Aktuelle Tickets</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 		<link href="/LaHMa_Servlet/CSS/fancyButton.css" rel="stylesheet" type="text/css">
 		<script src="/LaHMa_Servlet/js/servletConnection.js" type="text/javascript"></script>
+		
+		
+		
 	</head>
-	<body>
+	<body>		
 		<div class="header">
 			<h1>LaHMa Park</h1>
 			<div class="parent">
@@ -22,21 +25,17 @@
 				</div>
 			</div>
 		</div>
-		<nav>
-			<ul>
-				<li onclick="aufruf('selectTicket')">Entwerte Ticket</li>
-				<li onclick="if(setTicketID())aufruf('scanAbo')">Scanne Abo-Ticket</li>
-				<li onclick="aufruf('back')">Zurück</li>
-			</ul>
-		</nav>
-		<%@ page import="model.Ticket" %>
-		<% 
-			Ticket ticket = (Ticket) request.getAttribute("ticket");
-			if(ticket != null){
-		%>	
-		
-				<div class="card" >
-				    <h3 class="title">Ticket <%=ticket.getId()%></h3>
+		<div class="container2">
+			<%@ page import="java.util.List, model.*, java.util.Iterator" %>
+			<%
+				
+				List<Abo> list = AboDBS.getAktuelleAbos();
+				Iterator<Abo> iter = list.iterator();
+				while(iter.hasNext()){
+					Abo abo = iter.next();
+			%>
+				<div class="card" onclick="setAboID(<%=abo.getId()%>); aufruf(${answereMethod });">
+				    <h3 class="title">Abo <%=abo.getId()%></h3>
 				    <div class="bar">
 				      <div class="emptybar"></div>
 				      <div class="filledbar"></div>
@@ -46,13 +45,15 @@
 				      <circle class="stroke" cx="60" cy="60" r="50"/>
 				    </svg>
 				    </div>
-				  </div>	
-				
-		<%		
-			}
+				  </div>
+				  
+			<%
+					
+				}
+			%>
 		
-		%>
-		
+
+
 		<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
 			<input id="method" name="method" type="hidden">
 			<input id="ticketID" name="ticketID" type="hidden">
