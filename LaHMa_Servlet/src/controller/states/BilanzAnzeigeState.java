@@ -18,6 +18,7 @@ public class BilanzAnzeigeState extends ServletState {
 		// TODO Auto-generated constructor stub
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void processGetRequest(HttpServletRequest request, HttpServletResponse response) {
 		String req = request.getParameter("method");
