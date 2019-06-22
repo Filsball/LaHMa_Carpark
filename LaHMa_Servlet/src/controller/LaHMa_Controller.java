@@ -14,9 +14,9 @@ import controller.states.AbozahlAnpassungState;
 import controller.states.AnsichtsAuswahlState;
 import controller.states.BilanzAnzeigeState;
 import controller.states.EinfahrState;
-import controller.states.EntwertungState;
 import controller.states.ManagerAnsichtState;
 import controller.states.PreisAnpassungState;
+import controller.states.SelectingTicketState;
 import controller.states.ServletState;
 import controller.states.TicketAutomatState;
 import model.LaHMa_DB;
@@ -49,7 +49,7 @@ public class LaHMa_Controller extends HttpServlet {
 		AnsichtsAuswahlState ansicht = new AnsichtsAuswahlState(this,"Startseite");
 		BilanzAnzeigeState bilanz = new BilanzAnzeigeState(this,"Bilanz");
 		EinfahrState einfahr = new EinfahrState(this,"Einfahrautomat");
-		EntwertungState entwert = new EntwertungState(this,"Entwerten");
+		SelectingTicketState selectTicket = new SelectingTicketState(this,"Entwerten");
 		ManagerAnsichtState manager = new ManagerAnsichtState(this,"Manager");
 		PreisAnpassungState preis  = new PreisAnpassungState(this,"Preisanpassung");
 		
@@ -94,9 +94,13 @@ public class LaHMa_Controller extends HttpServlet {
 		));
 
 		ticketAutomat.setStateMap( generateStateMap( 
-				new Pair("entwerten",entwert),
+				new Pair("entwerten",selectTicket),
 				new Pair("abo",manageAbo),
-				new Pair("back",ansicht)				
+				new Pair("back",ansicht)		
+		));
+
+		selectTicket.setStateMap( generateStateMap( 
+				new Pair("entwerteTicket",ticketAutomat)		
 		));
 		
 		manageAbo.setStateMap( generateStateMap( 
@@ -105,8 +109,8 @@ public class LaHMa_Controller extends HttpServlet {
 				new Pair("back",ticketAutomat)				
 		));
 
-		entwert.setStateMap( generateStateMap( 
-				new Pair("updatePreis",entwert),
+		selectTicket.setStateMap( generateStateMap( 
+				new Pair("updatePreis",selectTicket),
 				new Pair("back",ticketAutomat)				
 		));
 		AnsichtsAuswahlState.startSeitePointer = ansicht;
