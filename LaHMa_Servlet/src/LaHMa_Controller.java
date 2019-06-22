@@ -6,7 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LaHMa_Controller extends HttpServlet {
-
+	
+	
+	
 	private static final long serialVersionUID = 1L;
 	private LaHMa_DB bean;
 	
@@ -21,19 +23,20 @@ public class LaHMa_Controller extends HttpServlet {
 			HttpServletResponse response) throws IOException, ServletException{
 		
 		
-		System.out.println("getbekommen");
-		String ergebnis = request.getParameter("method");
+		String ergebnis = request.getParameter("method");	
 		System.out.println(ergebnis);
 		if(ergebnis == null) {request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response);return;}
+		
 		switch(ergebnis) {
-			case "Ticketautomat" : System.out.println("hi"); break;
-			
+			case "Manager" : request.getRequestDispatcher("/WEB-INF/Einfahrautomat.jsp").forward(request, response); break;
+			case "Ausfahren" : request.getRequestDispatcher("/WEB-INF/Ausfahrautomat.jsp").forward(request, response); break;
+			case "Einfahren" : request.getRequestDispatcher("/WEB-INF/Einfahrautomat.jsp").forward(request, response); break;
+			case "Ticketautomat" : request.getRequestDispatcher("/WEB-INF/Ticketautomat.jsp").forward(request, response); break;
 			default : request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response); 
 		}
 		
-		request.setAttribute("result", "This is the result of the servlet call");
-		request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response);
-		
+//		request.setAttribute("result", "This is the result of the servlet call");
+//		request.getRequestDispatcher("/WEB-INF/Startseite.jsp").forward(request, response);
 		
 	}
 

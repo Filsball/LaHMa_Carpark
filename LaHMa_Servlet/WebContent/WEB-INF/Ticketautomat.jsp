@@ -1,16 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
-<head>
-<script type="text/javascript">function aufruf(input){document.getElementById('method').value=input.value; document.getElementById('startFormular').submit();}</script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ticketautomat</title>
-</head>
-<body>
-<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
-<input type="hidden" value="" name="method" id="method">
-<input type="button" value="Entwerte Ticket" onclick="aufruf(this);">
-</form>
-</body>
+	<head>
+		<title>Startseite</title>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+		<link href="/LaHMa_Servlet/CSS/fancyButton.css" rel="stylesheet" type="text/css">
+		<script src="/LaHMa_Servlet/js/servletConnection.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="header">
+			<h1>LaHMa Park</h1>
+			<div class="parent">
+				<div class="container">
+					<div class="neon">noch frei: </div>
+					<div class="neon">27 </div>
+				</div>
+			</div>
+			<div class="parent2">
+				<div class="container">
+					<div class="neon">open: </div>
+					<div class="neon">24/7 </div>
+				</div>
+			</div>
+		</div>
+		<nav>
+			<ul>
+				<li onclick="if(setTicketID())aufruf('checkTicket')">Führe Ticket ein</li>
+				<li onclick="if(setTicketID())aufruf('scanAbo')">Scanne Abo-Ticket</li>
+				<li onclick="aufruf('back')">Verlassen</li>
+			</ul>
+		</nav>
+
+		<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
+			<input id="method" name="method" type="hidden">
+			<input id="ticketID" name="ticketID" type="hidden">
+		</form>
+	</body>
 </html>
+
