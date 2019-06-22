@@ -25,11 +25,12 @@ public class TicketEntwertung {
 	}
 	
 	public static void entwerteTicket(Ticket t) {
+		Date ende = new Date(System.currentTimeMillis());
 		
-		Date[] d = { t.getStart(), t.getEnt() }; //Start und entwerttungs/Aktuelle Zeit
+		Date[] d = { t.getStart(), ende};		 //Start und entwerttungs/Aktuelle Zeit
 		int preis = calcTicketPrice(d);			 //Preisberechnung
 		payTicket(preis);						 //Payment aufruf
-		TicketDBS.setEndZeit(t);				 //Entwertungszeit wird gesetzt (Nach Zahlung)
+		TicketDBS.setEndZeit(t, ende);			 //Entwertungszeit wird gesetzt (Nach Zahlung)
 		t.setPreis(preis);						 //Preis wird gesetzt
 		
 	}

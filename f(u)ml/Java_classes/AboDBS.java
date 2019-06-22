@@ -15,7 +15,6 @@ public class AboDBS {
 		return a;
 	}
 	
-
 	public boolean hasAbo(int AboId) {
 		return false;
 	}

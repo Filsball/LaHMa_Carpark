@@ -1,6 +1,4 @@
 import java.util.Date;
-import java.util.List;
-import java.util.concurrent.SynchronousQueue;
 
 
 /*	-calcIfEntwertet() bekommt die Entwertungszeit eines Ticketsübergeben
@@ -15,25 +13,27 @@ import java.util.concurrent.SynchronousQueue;
 public class Verification {
 
 	//Ausfahrt NormalKunde
-	public static void checkTicket(Ticket t) {
+	public static boolean checkTicket(Ticket t) {
 
 		if(t.getEnt()!=null) {
 			if(calcIfEntwertet(t.getEnt())) {
 				TicketDBS.ticketIstAusgefahren(t);
 				System.out.println("Ticket ist entwertet. Schranke öffnet. Auf Wiedersehen :)");
-				
+				return true;
 			}else {
 				System.out.println("Ticket bitte neu entwerten lassen");
+				return false;
 			}
 		}else {
 			System.out.println("Ticket bitte entwerten lassen");
+			return false;
 		}
 	}
 	
 	//Berechnet ob das Zeitintervall zwischen Entwertung und Ausfahrt überschritten ist
 	public static boolean calcIfEntwertet( Date ticket) {
 
-		Date aktuell = new Date();
+		Date aktuell = new Date(System.currentTimeMillis());
 		long aktuellL = aktuell.getTime();
 		
 		return (aktuellL-ticket.getTime())<1_200_000.0;
