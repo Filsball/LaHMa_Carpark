@@ -177,7 +177,9 @@ nav li:hover::after {
 margin-top: 20px;
 }
 
-
+.parent2{
+	margin-top: 20px;
+}
 
 body {
 
