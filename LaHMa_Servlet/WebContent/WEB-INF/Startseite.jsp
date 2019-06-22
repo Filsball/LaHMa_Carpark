@@ -12,7 +12,7 @@
 			<div class="parent">
 				<div class="container">
 					<div class="neon">noch frei: </div>
-					<div class="neon">27 </div>
+					<div class="neon">${freeSpots } </div>
 				</div>
 			</div>
 			<div class="parent2">

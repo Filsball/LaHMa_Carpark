@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import controller.FreeSpots;
 import controller.LaHMa_Controller;
+import model.Parkhaus;
 
 public abstract class ServletState {
 	public String viewName = "";
@@ -25,12 +27,8 @@ public abstract class ServletState {
 	}
 
 	public void processGetRequestAndChangeState(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-		
-		
 		processGetRequest(request,response);
-		
 		String event = request.getParameter("method");
-		
 		ServletState s = this;
 		if(event != null) {
 			s = changeState(event);
@@ -39,7 +37,7 @@ public abstract class ServletState {
 				controller.setState(this);
 			}
 		}
-
+		request.setAttribute("freeSpots", FreeSpots.calcSpots(Parkhaus.getSpots(), Parkhaus.getMaxAbo()));
 		request.getRequestDispatcher("/WEB-INF/"+s.viewName+".jsp").forward(request, response);
 	}
 
