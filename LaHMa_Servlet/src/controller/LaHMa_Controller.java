@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.LaHMa_DB;
-import states.AboManagementState;
-import states.AbozahlAnpassungState;
-import states.AnsichtsAuswahlState;
-import states.BilanzAnzeigeState;
-import states.EinfahrState;
-import states.EntwertungState;
-import states.ManagerAnsichtState;
-import states.PreisAnpassungState;
-import states.ServletState;
-import states.TicketAutomatState;
+import controller.states.AboManagementState;
+import controller.states.AbozahlAnpassungState;
+import controller.states.AnsichtsAuswahlState;
+import controller.states.BilanzAnzeigeState;
+import controller.states.EinfahrState;
+import controller.states.EntwertungState;
+import controller.states.ManagerAnsichtState;
+import controller.states.PreisAnpassungState;
+import controller.states.ServletState;
+import controller.states.TicketAutomatState;
 
 public class LaHMa_Controller extends HttpServlet {
 
