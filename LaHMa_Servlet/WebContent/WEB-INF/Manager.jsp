@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Manageroptionen</title>
+		<title>Manageransicht</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 		<link href="/LaHMa_Servlet/CSS/fancyButton.css" rel="stylesheet" type="text/css">
 		<script src="/LaHMa_Servlet/js/servletConnection.js" type="text/javascript"></script>
@@ -24,10 +24,9 @@
 		</div>
 		<nav>
 			<ul>
-				<li onclick="aufruf('Tages-Bilanz')">Tagesbilanz</li>
-				<li onclick="aufruf('Monats-Bilanz')">Monatsbilanz</li>
-				<li onclick="aufruf('Jahres-Bilanz')">Jahresbilanz</li>
-				
+				<li onclick="aufruf('Bilanz')">Bilanzansicht</li>
+				<li onclick="aufruf('ChangePrices')">Preise ändern</li>
+				<li onclick="aufruf('ChangeMaxAbo')">Max. Abonnenten ändern</li>
 			</ul>
 		</nav>
 
