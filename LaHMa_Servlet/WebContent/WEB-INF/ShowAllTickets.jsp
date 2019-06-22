@@ -14,12 +14,12 @@
 
 .success-icon {
   display: inline-block;
-  width: 8em;
-  height: 8em;
-  font-size: 20px;
+  width: 10rem;
+  height: 10rem;
+  font-size: 1.2rem;
   border-radius: 50%;
-  border: 4px solid #96df8f;
-  background-color: #fff;
+  border: 4px solid rgb(147, 220, 255);
+  background-color: #840b21;
   position: relative;
   overflow: hidden;
   -webkit-transform-origin: center;
@@ -29,12 +29,15 @@
   -webkit-transform: scale(1);
           transform: scale(1);
 }
+.successCircle{
 
+  left: calc(50% - 5rem) !important;
+}
 .success-icon__tip, .success-icon__long {
   display: block;
   position: absolute;
   height: 4px;
-  background-color: #96df8f;
+  background-color: rgb(147, 220, 255);
   border-radius: 10px;
 }
 .success-icon__tip {
@@ -138,8 +141,7 @@
     left: 2.75em;
     visibility: visible;
   }
-}
-		</style>
+}</style>
 		
 		
 	</head>
@@ -174,8 +176,10 @@
 				      <div class="emptybar"></div>
 				      <div class="filledbar"></div>
 				    </div>
-				    <div class="circle">
+				    <div class="circle  <%if(ticket.getEnt()!= null){%> successCircle <%}%>">
+				    <%if(ticket.getEnt()== null){%>
 				      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+				    <%} %>
 				      <circle class="stroke" cx="60" cy="60" r="50"/>
 				    </svg>
 				    <%if(ticket.getEnt()!= null){%>
