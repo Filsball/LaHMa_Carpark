@@ -18,7 +18,7 @@ public class EntwertungState extends ServletState {
 
 	@Override
 	public void processPostRequest(HttpServletRequest request, HttpServletResponse response) {
-
+		
 	}
 
 

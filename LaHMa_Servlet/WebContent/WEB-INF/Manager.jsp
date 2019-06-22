@@ -22,11 +22,12 @@
 				</div>
 			</div>
 		</div>
+		
 		<nav>
 			<ul>
-				<li onclick="aufruf('Bilanz')">Bilanzansicht</li>
-				<li onclick="aufruf('ChangePrices')">Preise ändern</li>
-				<li onclick="aufruf('ChangeMaxAbo')">Max. Abonnenten ändern</li>
+				<li onclick="aufruf('bilanz')">Bilanzansicht</li>
+				<li onclick="aufruf('preis')">Preise ändern</li>
+				<li onclick="aufruf('abo')">Max. Abonnenten ändern</li>
 			</ul>
 		</nav>
 
