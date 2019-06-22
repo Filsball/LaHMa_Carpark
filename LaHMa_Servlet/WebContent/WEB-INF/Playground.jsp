@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Ausfahrautomat</title>
+		<title>Hannah's Spielwiese</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 		<link href="/LaHMa_Servlet/CSS/fancyButton.css" rel="stylesheet" type="text/css">
 		<script src="/LaHMa_Servlet/js/servletConnection.js" type="text/javascript"></script>
@@ -24,15 +24,12 @@
 		</div>
 		<nav>
 			<ul>
-				<li onclick="if(setTicketID())aufruf('checkTicket')">Führe Ticket ein</li>
-				<li onclick="if(setTicketID())aufruf('scanAbo')">Scanne Abo-Ticket</li>
 				<li onclick="aufruf('back')">Zurück</li>
 			</ul>
 		</nav>
 
 		<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
 			<input id="method" name="method" type="hidden">
-			<input id="ticketID" name="ticketID" type="hidden">
 		</form>
 	</body>
 </html>

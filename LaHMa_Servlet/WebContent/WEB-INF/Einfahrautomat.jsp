@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Startseite</title>
+		<title>Einfahrautomat</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 		<link href="/LaHMa_Servlet/CSS/fancyButton.css" rel="stylesheet" type="text/css">
 		<script src="/LaHMa_Servlet/js/servletConnection.js" type="text/javascript"></script>

@@ -28,6 +28,7 @@
 				<li onclick="aufruf('Ticketautomat')">Ticketautomat</li>
 				<li onclick="aufruf('Ausfahren')">Ausfahren</li>
 				<li onclick="aufruf('Manager')">Manageroptionen</li>
+				<li onclick="aufruf('Playground')">Hannah's Spielwiese &#9825;</li>
 			</ul>
 		</nav>
 

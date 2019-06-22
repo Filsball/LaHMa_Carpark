@@ -38,7 +38,10 @@ public abstract class ServletState {
 			}
 		}
 		request.setAttribute("freeSpots", FreeSpots.getFreeSpots());
-		request.getRequestDispatcher("/WEB-INF/"+s.viewName+".jsp").forward(request, response);
+		if(event != null && event.equals("Playground"))
+			request.getRequestDispatcher("/WEB-INF/Playground.jsp").forward(request, response);
+		else
+			request.getRequestDispatcher("/WEB-INF/"+s.viewName+".jsp").forward(request, response);
 	}
 
 	public abstract void processGetRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException;
