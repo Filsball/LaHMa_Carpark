@@ -108,7 +108,7 @@ public class LaHMa_Controller extends HttpServlet {
 		
 		manageAbo.setStateMap( generateStateMap( 
 				new Pair("cancel",manageAbo),
-				new Pair("abschließen",manageAbo),
+				new Pair("abschliessen",manageAbo),
 				new Pair("back",ticketAutomat)				
 		));
 		AnsichtsAuswahlState.startSeitePointer = ansicht;
