@@ -5,15 +5,9 @@ import java.util.List;
 public class AboDBS {
 	
 	
-	private static List<Abo> abos;
+	private static List<Abo> abos = new ArrayList<Abo>();
 	
-	private static List<Abo> canceledAbos;
-	
-	public AboDBS() {
-		Parkhaus.getInstance();
-		abos = new ArrayList<Abo>();
-		canceledAbos = new ArrayList<Abo>();
-	}
+	private static List<Abo> canceledAbos = new ArrayList<Abo>();
 	
 	public static Abo newAbo(String username, String password) {
 		Abo a = new Abo(username, password);
@@ -60,7 +54,7 @@ public class AboDBS {
 	public static int getMaxAbos() {
 		return Parkhaus.getMaxAbo();
 	}
-	
+
 	public void newEntry(Abo abo) {
 		abos.add(abo);
 	}

@@ -14,16 +14,9 @@ import java.util.List;
 
 public class TicketDBS {
 	
-	private static List<Ticket> aktiveTickets ;
+	private static List<Ticket> aktiveTickets = new ArrayList<Ticket>();
 	
-	private static List<Ticket> abgeschlosseneTickets;
-	
-	TicketDBS() {
-		Parkhaus.getInstance();
-		aktiveTickets = new ArrayList<Ticket>();
-		abgeschlosseneTickets = new ArrayList<Ticket>();
-	}
-	
+	private static List<Ticket> abgeschlosseneTickets = new ArrayList<Ticket>();
 	
 	//Gibt die aktuell freien Pl�tze zur�ck
 	public static int getTicketZahl() {
