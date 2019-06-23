@@ -39,16 +39,27 @@
 				while(iter.hasNext()){
 					Ticket ticket = iter.next();
 			%>
-				<div class="card">
+				<div class="card" onclick="setTicketID(<%=ticket.getId()%>); aufruf('${answereMethod }');">
 				    <h3 class="title">Ticket <%=ticket.getId()%></h3>
 				    <div class="bar">
 				      <div class="emptybar"></div>
 				      <div class="filledbar"></div>
 				    </div>
-				    <div class="circle">
+				    <div class="circle  <%if(ticket.getEnt()!= null){%> successCircle <%}%>">
+				    <%if(ticket.getEnt()== null){%>
 				      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+				    <%} %>
 				      <circle class="stroke" cx="60" cy="60" r="50"/>
 				    </svg>
+				    <%if(ticket.getEnt()!= null){%>
+				    	<div class="dummy-positioning d-flex">  
+						  <div class="success-icon">
+						    <div class="success-icon__tip"></div>
+						    <div class="success-icon__long"></div>
+						  </div>						  
+						</div>
+				    <%} %>
+				    
 				    </div>
 				  </div>
 				  
@@ -56,7 +67,8 @@
 					
 				}
 			%>
-
+		</div>
+		
 		<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
 			<input id="method" name="method" type="hidden">
 			<input id="ticketID" name="ticketID" type="hidden">

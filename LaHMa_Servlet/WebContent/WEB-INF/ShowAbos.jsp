@@ -52,6 +52,7 @@
 				}
 			%>
 		
+		</div>
 
 
 		<form method="get" action="/LaHMa_Servlet/LaHMa_Controller" id="startFormular">
