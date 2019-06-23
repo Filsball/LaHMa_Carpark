@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Manageransicht</title>
+		<title>Abo-Management</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
 		<link href="/LaHMa_Servlet/CSS/fancyButton.css" rel="stylesheet" type="text/css">
 		<script src="/LaHMa_Servlet/js/servletConnection.js" type="text/javascript"></script>
@@ -25,9 +25,8 @@
 		
 		<nav>
 			<ul>
-				<li onclick="aufruf('bilanz')">Bilanzansicht</li>
-				<li onclick="aufruf('preis')">Preise ändern</li>
-				<li onclick="aufruf('abo')">Max. Abonnenten ändern</li>
+				<li onclick="aufruf('abschliessen')">Abo abschliessen</li>
+				<li onclick="aufruf('cancel')">Abo kündigen</li>
 				<li onclick="aufruf('back')">Zurück</li>
 			</ul>
 		</nav>

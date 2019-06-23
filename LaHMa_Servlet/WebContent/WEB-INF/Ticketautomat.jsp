@@ -26,6 +26,7 @@
 			<ul>
 				<li onclick="aufruf('selectTicket')">Entwerte Ticket</li>
 				<li onclick="if(setTicketID())aufruf('scanAbo')">Scanne Abo-Ticket</li>
+				<li onclick="aufruf('abo')">Abo Optionen</li>
 				<li onclick="aufruf('back')">Zurück</li>
 			</ul>
 		</nav>
