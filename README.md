@@ -22,5 +22,9 @@
 
 - Singleton Pattern:
 	- Klasse Parkhaus als Singleton umgesetzt
+	
 - [MVC](https://www.youtube.com/watch?v=YYvOGPMLVDo)
 	- Servlet dient als Controller, jsp-Dateien als Views, [Model Klassen](https://github.com/Filsball/LaHMa_Carpark/tree/master/LaHMa_Servlet/src/model) kapseln Daten um Views von Programmlogik unabhängig zu machen
+	
+- State Pattern:
+	- LaHMa_Controller als Kontext hat einen Zustand vom Typ ServletState (oder sämtlichen Unterklassen)
