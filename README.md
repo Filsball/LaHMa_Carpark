@@ -28,3 +28,9 @@
 	
 - State Pattern:
 	- LaHMa_Controller als Kontext hat einen Zustand vom Typ ServletState (oder sämtlichen Unterklassen)
+	
+#### Funktionale Programmierung ist auch am Start
+
+![Func_Prog_1](Func_Prog_1.jpeg)
+![Func_Prog_2](Func_Prog_2.jpeg)
+![Func_Prog_3](Func_Prog_3.jpeg)
