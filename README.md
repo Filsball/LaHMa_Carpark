@@ -8,7 +8,9 @@ Carpark simulation
 5. Sequenzdiagramme:		LaHMa_Carpark\modelling\Sequence_Diagrams
 6. Klassendiagramm:		LaHMa_Carpark\modelling\Class_Diagramm
 7. Unit Tests:			LaHMa_Carpark\LaHMa_Servlet\src\unittests
-8.
+8. Model Klassen: 		LaHMa_Carpark\LaHMa_Servlet\src\model
+9. Controller Klassen:		LaHMa_Carpark\LaHMa_Servlet\src\controller
+10. Standartschritte: 		LaHMa_Carpark\modelling\Standartschritte
 - Template Pattern:
 	- ServletState definiert Algorithmus für die 
 	processGetRequestAndChangeState-Methode	und überlässt 
