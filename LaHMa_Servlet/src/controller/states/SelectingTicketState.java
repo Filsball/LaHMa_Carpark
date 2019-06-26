@@ -18,7 +18,8 @@ public class SelectingTicketState extends ServletState {
 	}
 
 	@Override
-	public void processGetRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public void processGetRequest(HttpServletRequest request, HttpServletResponse response)
+	throws IOException, ServletException {
 		int ticketID = Integer.parseInt(request.getParameter("ticketID"));
 		Ticket ticket = TicketDBS.getAktList().stream().filter(t -> t.getId() == ticketID).findFirst().get();
 		request.setAttribute("ticket", ticket);

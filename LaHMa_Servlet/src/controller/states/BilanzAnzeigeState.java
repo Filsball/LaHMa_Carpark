@@ -54,9 +54,7 @@ public class BilanzAnzeigeState extends ServletState {
 					.reduce(0, Integer::sum);
 					System.out.println(months[i]);
 			});
-			
 		}
-
 	}
 
 	@Override

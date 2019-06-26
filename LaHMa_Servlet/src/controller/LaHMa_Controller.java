@@ -119,7 +119,7 @@ public class LaHMa_Controller extends HttpServlet {
 	
 	public Map<String,ServletState> generateStateMap(Pair... pairs) {
 		Map<String,ServletState> map = new HashMap<>();
-		Arrays.asList(pairs).forEach(pair -> map.put(pair.event.toUpperCase(), pair.state));;
+		Arrays.asList(pairs).forEach(pair -> map.put(pair.event.toUpperCase(), pair.state));
 		return map;
 	}
 	
