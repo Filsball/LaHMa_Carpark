@@ -1,4 +1,4 @@
-# LaHMa_Carpark
+﻿# LaHMa_Carpark
 Carpark simulation
 
 1. User Stories: 		LaHMa_Carpark\modelling\User Stories
@@ -9,3 +9,9 @@ Carpark simulation
 6. Klassendiagramm:		LaHMa_Carpark\modelling\Class_Diagramm
 7. Unit Tests:			LaHMa_Carpark\LaHMa_Servlet\src\unittests
 8.
+- Template Pattern:
+	- ServletState definiert Algorithmus für die 
+	processGetRequestAndChangeState-Methode	und überlässt 
+	konkrete Implementierung von Sub-Algorithmus von
+	processGetRequest-Methode
+	den Unterklassen
